@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script src="https://unpkg.com/konva@9.2.0/konva.min.js"></script>
+    <meta charset="utf-8" />
+    <title>Trial Step By Step</title>
+  </head>
+
+  <body>
+    <div id="konva-holder"></div>
+    <script>
+      let stage = new Konva.Stage({
+        height: 600,
+        width: 600,
+        container: "konva-holder",
+      });
+      let layer = new Konva.Layer ();
+      stage.add(layer);
+      // kotak 
+      let rect = new Konva.Rect({
+        x: 25,
+        y: 50,
+        fill: "red", 
+        // sisi
+        width: 50,
+        height: 50,
+      });
+      layer.add(rect);
+
+      // kotak w/ garis pinggir
+      let rect2 = new Konva.Rect({
+        x: 100,
+        y: 50,
+        fill: "red", 
+        stroke: "black",
+        // sisi
+        width: 50,
+        height: 50,
+      });
+      layer.add(rect2);
+
+      // kotak w/ ujung radius !=0
+      let rect3 = new Konva.Rect({
+        x: 175,
+        y: 50,
+        fill: "red", 
+        // atas kiri, atas kanan, bawah kanan, bawah kiri
+        cornerRadius: [10, 10, 10, 10],
+        // sisi
+        width: 50,
+        height: 50,
+      });
+      layer.add(rect3);
+
+      // kotak ujung radius !=0 w/ bayangan
+      let rect4 = new Konva.Rect({
+        x: 250,
+        y: 50,
+        fill: "red", 
+        // atas kiri, atas kanan, bawah kanan, bawah kiri
+        cornerRadius: [10, 10, 10, 10],
+        shadowBlur: 15,
+        // sisi
+        width: 50,
+        height: 50,
+      });
+      layer.add(rect4);
+
+      
+      layer.draw();
+
+    </script>
+  </body>
+</html>
